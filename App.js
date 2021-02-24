@@ -3,7 +3,7 @@ import Chat from './components/Chat';
 import Start from './components/Start';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import { StyleSheet } from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
 const Stack = createStackNavigator();
 
 export default class App extends React.Component {

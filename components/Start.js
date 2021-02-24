@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, Button, TextInput, StyleSheet, ImageBackground } from 'react-native';
+import { View, Text, Button, TextInput, StyleSheet, ImageBackground, KeyboardAvoidingView } from 'react-native';
 import { Directions, TouchableHighlight, TouchableNativeFeedback, TouchableOpacity } from 'react-native-gesture-handler';
 import { color } from 'react-native-reanimated';
 
@@ -76,6 +76,8 @@ export default class Start extends React.Component {
           </TouchableOpacity>
         </View>
       </View>
+      { Platform.OS === 'android' ? (<KeyboardAvoidingView behavior='height' />) : null }
+
       </ImageBackground>
     )
   }
@@ -94,7 +96,7 @@ const styles = StyleSheet.create({
   titleBox: {
     flex: 1,
     height: '56%',
-    justifyContent: 'space-evenly',
+    justifyContent: 'center',
   },
   title: {
     flex: 1,
@@ -102,12 +104,12 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     color: '#FFFFFF',
     textAlign: 'center',
-    marginTop: '30%',
+    marginTop: '20%',
   },
   yourInput: {
-    flex: 1,
+    flex: 2,
     marginHorizontal: '6%',
-    height: '44%',
+    height: 350,
     width: '88%',
     position: 'absolute',
     backgroundColor: '#FFF',
